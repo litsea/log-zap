@@ -1,0 +1,18 @@
+log:
+  console:
+    out: "stdout"
+    level: "debug"
+    encoder:
+      name: "console"
+      time-format: "2006-01-02T15:04:05"
+  file:
+    out: "tmp/log/app.log"
+    level: "info"
+    encoder:
+      name: "json"
+      time-format: "RFC3339"
+    rotate: true
+    # megabytes
+    max-size: 10
+    max-days: 7
+    max-backups: 10
