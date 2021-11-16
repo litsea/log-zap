@@ -18,7 +18,7 @@ func newZapLogger(v *viper.Viper) (Logger, error) {
 		return nil, ErrEmptyLoggerConfig
 	}
 
-	var cores []zapcore.Core
+	var cores []zapcore.Core //nolint:prealloc
 
 	for _, k := range keys(v) {
 		c := newZapCore(v.Sub(k))
